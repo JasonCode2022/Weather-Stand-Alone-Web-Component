@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Weather Component</title>
+
+  <script type="module" src="/build/weather-comp-2023.esm.js"></script>
+  <script nomodule src="/build/weather-comp-2023.js"></script>
+</head>
+<style>
+  .weather-btn {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background-color: rgb(14, 14, 153);
+    color: white;
+    border: none;
+    font-size: 1.1rem;
+    text-align: center;
+    line-height: 5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3), inset 0 -6px 10px rgba(255, 255, 255, 0.3);
+
+  }
+</style>
+<body>
+  <button id="weather-btn" class="weather-btn">Weather</button>
+  <jji-weather-comp tit="Weather" country-City-Entered-By-User=""></jji-weather-comp>
+
+
+
+
+  <script>
+    const weatherButton = document.querySelector('#weather-btn');
+    weatherButton.addEventListener('click', () => {
+      if (!WeatherComp.visible) {
+        WeatherComp.openWeatherComp();
+        
+      }
+    })
+
+    const WeatherComp = document.querySelector('jji-weather-comp');
+  </script>
+
+</body>
+</html>
