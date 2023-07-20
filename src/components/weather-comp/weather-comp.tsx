@@ -83,8 +83,6 @@ export class WeatherComp {
     @State() numberOfDaysToBeForecasted: number;
 
 
-
-
     @Method()
     async openWeatherComp() {
         console.log('Snow Is Coming...');
