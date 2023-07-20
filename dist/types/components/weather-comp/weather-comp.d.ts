@@ -1,0 +1,41 @@
+export declare class WeatherComp {
+  inputCityCountry: HTMLInputElement;
+  el: HTMLElement;
+  tit: string;
+  visible: boolean;
+  countryCityEnteredByUser: string;
+  numbeOfDaysToForecast: number;
+  weatherCityCountryChange(newValue: string, oldValue: string): void;
+  handleDaysToForecastChange(event: Event): void;
+  fetchedCountry: string;
+  fetchedCity: string;
+  fetchedCurrentDate: Date;
+  fetchedCurrentTemperature: number;
+  fetchedCurrentWind: number;
+  fetchedCurrentHumidity: number;
+  fetchedPlusOneCurrentDate: Date;
+  fetchedPlusOneCurrentTemperature: number;
+  fetchedPlusOneCurrentWind: number;
+  fetchedPlusOneCurrentHumidity: number;
+  fetchedPlusTwoCurrentDate: Date;
+  fetchedPlusTwoCurrentTemperature: number;
+  fetchedPlusTwoCurrentWind: number;
+  fetchedPlusTwoCurrentHumidity: number;
+  countryUserInput: string;
+  inputCityCountryValid: boolean;
+  error: string;
+  forecastData: {
+    date: Date;
+    temperature: number;
+    wind: number;
+    humidity: number;
+  }[];
+  numberOfDaysToBeForecasted: number;
+  openWeatherComp(): Promise<void>;
+  closeWeatherComp(): void;
+  onUserInput(event: Event): void;
+  onFetchWeatherData(event: Event): void;
+  componentWillLoad(): void;
+  fetchCountryCityWeather(countryCityEntered: string, numbeOfDaysToForecast: number): void;
+  render(): any[];
+}

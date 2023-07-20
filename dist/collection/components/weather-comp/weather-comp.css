@@ -1,0 +1,223 @@
+aside {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 40rem;
+    max-width: 70%;
+    color: #fff;
+    background-color: #333;
+    box-shadow: 10px -2px 20px 2px rgb(0 0 0 / 30%);
+    transition: left 0.3s ease-out;
+    z-index: 100;
+    margin: 20px auto;
+    padding: 0 20px 20px 20px;
+    border-radius: 6px;
+  }
+  
+  aside h1 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  aside.expanded {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+  }
+
+  .input-container {
+    margin-top: 0.6rem;
+  }
+  
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  
+  .box {
+    flex: 0 0 calc(33% - 1.5rem);
+    margin-bottom: 1.5rem;
+    margin-right: 1.2rem;
+    background-color: lightblue;
+    color: black;
+    border: 1px solid gray;
+    padding: 1rem;
+    border-radius: 6px;
+  }
+  
+  .location {
+    display: grid;
+    grid-template-columns: auto;
+    align-items: center;
+  }
+  
+  .info {
+    grid-column: 1;
+  }
+  
+  .location img {
+    grid-column: 2;
+  }
+  
+  header {
+    padding: 1rem;
+    background-color: lightblue;
+    position: relative;
+    border: 1px solid gray;
+    border-radius: 6px;
+  }
+  
+  header h1 {
+    font-size: 1.5rem;
+    color: black;
+    margin: 0;
+  }
+  
+  header button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    background-color: #ff0000;
+    border: none;
+    font-size: 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  header button:hover {
+    background-color: #cc0000;
+  }
+  
+  :host([visible]) aside {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-out;
+  }
+  
+  :host([visible]) .backdrop {
+    opacity: 1;
+    pointer-events: all;
+  }
+  
+  form button:disabled {
+    background-color: #ccc;
+    border-color: #ccc;
+    color: white;
+    cursor: not-allowed;
+  }
+  
+  .button-40 {
+    background-color: #111827;
+    border: 1px solid transparent;
+    border-radius: .75rem;
+    box-sizing: border-box;
+    margin-top: 1rem;
+    color: #FFFFFF;
+    cursor: pointer;
+    flex: 0 0 auto;
+    font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1rem;
+    padding: .5rem 1rem;
+    text-align: center;
+    text-decoration: none #6B7280 solid;
+    text-decoration-thickness: auto;
+    transition-duration: .2s;
+    transition-property: background-color,border-color,color,fill,stroke;
+    transition-timing-function: cubic-bezier(.4, 0, 0.2, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: auto;
+  }
+  
+  .button-40:hover {
+    background-color: #374151;
+  }
+  
+  .button-40:focus {
+    box-shadow: none;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+  }
+  
+  @media (min-width: 768px) {
+    .button-40 {
+      padding: .75rem 1.5rem;
+    }
+  }
+  
+  select {
+    appearance: none;
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: #333333;
+  }
+  
+  select:hover {
+    border-color: #888888;
+  }
+  
+  select:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.5);
+  }
+
+  aside form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: white;
+    font-family: sans-serif;
+  }
+  
+  aside form input {
+    appearance: none;
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: #333333;
+  }
+  
+  aside form input:hover {
+    border-color: #888888;
+  }
+  
+  aside form input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.5);
+  }
+  
+  
+  
+  
+  
+  

@@ -1,0 +1,12 @@
+{
+  "entries": [
+    "components\\weather-comp\\weather-comp.js"
+  ],
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "4.0.1",
+    "typescriptVersion": "5.0.4"
+  },
+  "collections": [],
+  "bundles": []
+}
