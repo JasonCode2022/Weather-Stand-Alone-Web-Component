@@ -193,8 +193,10 @@ export class WeatherComp {
     render() {
         let mainContent = null;
         let secondContent = null;
+        let thirdContent = null;
 
         if (this.visible) {
+            
             mainContent = (
 
                 <div>
@@ -245,6 +247,14 @@ export class WeatherComp {
                 )
             }
             else {
+                thirdContent = (
+                    <div class="location">
+                        <div class="info">
+                            <h1>Country: {this.fetchedCountry}</h1>
+                            <h3>City: {this.fetchedCity}</h3>
+                        </div>
+                    </div>
+                )
                 secondContent = (
                     <div class="container">
                         {/* <div class="box">
@@ -300,20 +310,17 @@ export class WeatherComp {
             <aside class={asideClass}>
                 <main>
                     {mainContent}
-                    <div class="location">
-                        <div class="info">
-                            <h1>Country: {this.fetchedCountry}</h1>
-                            <h3>City: {this.fetchedCity}</h3>
-                        </div>
+                    
+                        {thirdContent}
                         {/* <img src="../../assets/icons/01d.png" alt="weather" /> */}
-                    </div>
+    
                 </main>
 
-                <div class="container">
+                
                     {secondContent}
-                </div>
+                
 
-            </aside>,
+            </aside >,
         ];
     }
 }

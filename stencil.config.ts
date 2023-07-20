@@ -1,7 +1,7 @@
 import { Config } from '@stencil/core';
 
 export const config: Config = {
-  namespace: 'weather-comp-2023',
+  namespace: 'weather-comp-stand-alone',
   outputTargets: [
     {
       type: 'dist',
