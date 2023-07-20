@@ -86,7 +86,7 @@ const WeatherComp = class {
     }
   }
   fetchCountryCityWeather(countryCityEntered, numbeOfDaysToForecast) {
-    fetch(`http://api.weatherapi.com/v1/forecast.json?key=${AV_API_KEY}&q=${countryCityEntered}&days=${numbeOfDaysToForecast}&aqi=no&alerts=no`)
+    fetch(`https://api.weatherapi.com/v1/forecast.json?key=${AV_API_KEY}&q=${countryCityEntered}&days=${numbeOfDaysToForecast}&aqi=no&alerts=no`)
       .then(res => {
       if (res.status !== 200) {
         throw new Error('Invalid!!');
@@ -154,7 +154,7 @@ const WeatherComp = class {
                 : "../../assets/icons/01d.png", alt: "weather" }), index.h("h2", null, day.temperature, "\u00B0C"), index.h("h4", null, "Wind Today: ", day.wind, "kph"), index.h("h4", null, "Humidity Today: ", day.humidity, "%"))))));
       }
     }
-    let asideClass = this.numberOfDaysToBeForecasted > 1 ? 'expanded' : '';
+    let asideClass = this.visible ? 'expanded' : '';
     return [
       index.h("div", { class: `backdrop ${asideClass}`, onClick: this.closeWeatherComp.bind(this) }),
       index.h("aside", { class: asideClass }, index.h("main", null, mainContent, thirdContent), secondContent),

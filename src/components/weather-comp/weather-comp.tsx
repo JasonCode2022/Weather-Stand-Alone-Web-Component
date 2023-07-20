@@ -128,7 +128,7 @@ export class WeatherComp {
     fetchCountryCityWeather(countryCityEntered: string, numbeOfDaysToForecast: number) {
         fetch(
 
-            `http://api.weatherapi.com/v1/forecast.json?key=${AV_API_KEY}&q=${countryCityEntered}&days=${numbeOfDaysToForecast}&aqi=no&alerts=no`
+            `https://api.weatherapi.com/v1/forecast.json?key=${AV_API_KEY}&q=${countryCityEntered}&days=${numbeOfDaysToForecast}&aqi=no&alerts=no`
         )
             .then(res => {
                 if (res.status !== 200) {
@@ -302,7 +302,7 @@ export class WeatherComp {
             }
 
         }
-        let asideClass = this.numberOfDaysToBeForecasted > 1 ? 'expanded' : '';
+        let asideClass = this.visible ? 'expanded' : '';
         return [
             <div class={`backdrop ${asideClass}`} onClick={this.closeWeatherComp.bind(this)}></div>,
             <aside class={asideClass}>
