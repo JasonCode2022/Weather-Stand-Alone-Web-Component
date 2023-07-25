@@ -1,8 +1,4 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-const index = require('./index-a56b3922.js');
+import { r as registerInstance, h, g as getElement } from './index-aee5870f.js';
 
 const AV_API_KEY = '52d75f6c17b0457e88d144124231207';
 
@@ -10,7 +6,7 @@ const weatherCompCss = "aside{position:fixed;top:0;left:-100%;width:40rem;max-wi
 
 const WeatherComp = class {
   constructor(hostRef) {
-    index.registerInstance(this, hostRef);
+    registerInstance(this, hostRef);
     this.tit = undefined;
     this.visible = undefined;
     this.countryCityEnteredByUser = undefined;
@@ -83,6 +79,7 @@ const WeatherComp = class {
     if (this.countryCityEnteredByUser && this.numbeOfDaysToForecast) {
       (this.countryUserInput = this.countryCityEnteredByUser) && (this.numberOfDaysToBeForecasted = this.numbeOfDaysToForecast);
       this.inputCityCountryValid = true;
+      this.fetchCountryCityWeather[(this.countryCityEnteredByUser, this.numbeOfDaysToForecast)];
     }
   }
   fetchCountryCityWeather(countryCityEntered, numbeOfDaysToForecast) {
@@ -139,28 +136,28 @@ const WeatherComp = class {
     let secondContent = null;
     let thirdContent = null;
     if (this.visible) {
-      mainContent = (index.h("div", null, index.h("header", null, index.h("h1", null, this.tit), index.h("button", { onClick: this.closeWeatherComp.bind(this) }, "X")), index.h("form", { onSubmit: this.onFetchWeatherData.bind(this) }, index.h("div", { class: "input-container" }, index.h("label", null, "Enter A Country\\City:", index.h("input", { placeholder: "Country: Italy\\City: Batroun", id: "country-city-input", ref: el => this.inputCityCountry = el, value: this.countryUserInput, onInput: this.onUserInput.bind(this) }), " ")), index.h("div", null, index.h("select", { name: "daysToForecast", id: "daysToForecast", onChange: this.handleDaysToForecastChange.bind(this) }, index.h("option", { value: "", disabled: true, selected: true, hidden: true }, "Days To Forecast"), index.h("option", { value: "0" }, "Current"), index.h("option", { value: "2" }, "Tomorrow"), index.h("option", { value: "3" }, "After Tomorrow"), index.h("option", { value: "4" }, "With Next 3 Days"), index.h("option", { value: "5" }, "With Next 4 Days"))), index.h("div", null, index.h("button", { type: "submit", class: "button-40", role: "button", disabled: !this.inputCityCountryValid }, "Strike Me")))));
+      mainContent = (h("div", null, h("header", null, h("h1", null, this.tit), h("button", { onClick: this.closeWeatherComp.bind(this) }, "X")), h("form", { onSubmit: this.onFetchWeatherData.bind(this) }, h("div", { class: "input-container" }, h("label", null, "Enter A Country\\City:", h("input", { placeholder: "Country: Italy\\City: Batroun", id: "country-city-input", ref: el => this.inputCityCountry = el, value: this.countryUserInput, onInput: this.onUserInput.bind(this) }), " ")), h("div", null, h("select", { name: "daysToForecast", id: "daysToForecast", onChange: this.handleDaysToForecastChange.bind(this) }, h("option", { value: "", disabled: true, selected: true, hidden: true }, "Days To Forecast"), h("option", { value: "0" }, "Current"), h("option", { value: "2" }, "Tomorrow"), h("option", { value: "3" }, "After Tomorrow"), h("option", { value: "4" }, "With Next 3 Days"), h("option", { value: "5" }, "With Next 4 Days"))), h("div", null, h("button", { type: "submit", class: "button-40", role: "button", disabled: !this.inputCityCountryValid }, "Strike Me")))));
       if (this.error) {
-        secondContent = (index.h("div", null, index.h("div", { class: "error-message" }, index.h("h1", null, this.error))));
+        secondContent = (h("div", null, h("div", { class: "error-message" }, h("h1", null, this.error))));
       }
       else {
-        thirdContent = (index.h("div", { class: "location" }, index.h("div", { class: "info" }, index.h("h1", null, "Country: ", this.fetchedCountry), index.h("h3", null, "City: ", this.fetchedCity))));
-        secondContent = (index.h("div", { class: "container" }, this.forecastData.map(day => (index.h("div", { class: "box" }, index.h("h3", null, "Date: ", day.date), index.h("img", { src: day.temperature < 10
+        thirdContent = (h("div", { class: "location" }, h("div", { class: "info" }, h("h1", null, "Country: ", this.fetchedCountry), h("h3", null, "City: ", this.fetchedCity))));
+        secondContent = (h("div", { class: "container" }, this.forecastData.map(day => (h("div", { class: "box" }, h("h3", null, "Date: ", day.date), h("img", { src: day.temperature < 10
             ? "../../assets/icons/13d.png"
             : day.temperature >= 10 && day.temperature < 20
               ? "../../assets/icons/03d.png"
               : day.temperature >= 20 && day.temperature < 27
                 ? "../../assets/icons/02d.png"
-                : "../../assets/icons/01d.png", alt: "weather" }), index.h("h2", null, day.temperature, "\u00B0C"), index.h("h4", null, "Wind Today: ", day.wind, "kph"), index.h("h4", null, "Humidity Today: ", day.humidity, "%"))))));
+                : "../../assets/icons/01d.png", alt: "weather" }), h("h2", null, day.temperature, "\u00B0C"), h("h4", null, "Wind Today: ", day.wind, "kph"), h("h4", null, "Humidity Today: ", day.humidity, "%"))))));
       }
     }
     let asideClass = this.visible ? 'expanded' : '';
     return [
-      index.h("div", { class: `backdrop ${asideClass}`, onClick: this.closeWeatherComp.bind(this) }),
-      index.h("aside", { class: asideClass }, index.h("main", null, mainContent, thirdContent), secondContent),
+      h("div", { class: `backdrop ${asideClass}`, onClick: this.closeWeatherComp.bind(this) }),
+      h("aside", { class: asideClass }, h("main", null, mainContent, thirdContent), secondContent),
     ];
   }
-  get el() { return index.getElement(this); }
+  get el() { return getElement(this); }
   static get watchers() { return {
     "countryCityEnteredByUser": ["weatherCityCountryChange"],
     "numbeOfDaysToForecast": ["handleDaysToForecastChange"]
@@ -168,6 +165,6 @@ const WeatherComp = class {
 };
 WeatherComp.style = weatherCompCss;
 
-exports.jji_weather_comp = WeatherComp;
+export { WeatherComp as jji_weather_comp };
 
-//# sourceMappingURL=jji-weather-comp.cjs.entry.js.map
+//# sourceMappingURL=jji-weather-comp.entry.js.map
